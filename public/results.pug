@@ -26,10 +26,12 @@ html(lang="en")
     .pagination
       if currentPage > 1
         button.btn#prev-page(type="button", 
-        onclick=`window.location.href='/search?page=${currentPage - 1}&departmentId=${departmentId}&keyword=${keyword}&location=${location}'`) Anterior
+        onclick=`window.location.href='/search?page=${currentPage - 1}
+        &departmentId=${departmentId}&keyword=${keyword}&location=${location}'`) Anterior
       span Pagina #{currentPage} de #{totalPages}
       if currentPage < totalPages
         button.btn#next-page(type="button", 
-        onclick=`window.location.href='/search?page=${currentPage + 1}&departmentId=${departmentId}&keyword=${keyword}&location=${location}'`) Siguiente
+        onclick=`window.location.href='/search?page=${currentPage + 1}
+        &departmentId=${departmentId}&keyword=${keyword}&location=${location}'`) Siguiente
 
     script(src='funciones.js')
