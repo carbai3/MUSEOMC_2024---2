@@ -34,8 +34,8 @@ footer.footer-style
         | &nbsp; 
         a(href="https://www.metmuseum.org/es", target="_blank") THE MET
 
-    script(src="funciones.js")
-    script.  
+
+script.  
             let currentImageIndex = 1;  
             const totalImages = 10; // Total de imágenes  
             const changeBackgroundImage = () => {  
@@ -43,5 +43,7 @@ footer.footer-style
                 document.getElementById('backgroundImage').src = `pictures/imagen${currentImageIndex}.jpg`; // Cambia la imagen de fondo  
             };  
             setInterval(changeBackgroundImage, 5000); // Cambia la imagen cada 5 segundos
+
+script(src="funciones.js")
 
 

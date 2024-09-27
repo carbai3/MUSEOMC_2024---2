@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const imageContainer = document.querySelector('.contenedor-imagenes-adicionales');
     const grid = document.querySelector('.grid'); // Referencia a la cuadrícula donde se colocan las imágenes
     const prevPageButton = document.getElementById('prev-page');  
-    const nextPageButton = document.getElementById('next-page'); 
+    const nextPageButton = document.getElementById('next-page');
 
 
     let currentPage = 1;
@@ -88,10 +88,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
-// Inicializa la paginación  
-const initPagination = async () => {
-    allObjectIDs = await getAllObjectsFromAPI();
-    console.log("Total de ObjectIDs:", allObjectIDs);
+    // Inicializa la paginación  
+    const initPagination = async () => {
+        allObjectIDs = await getAllObjectsFromAPI();
+        console.log("Total de ObjectIDs:", allObjectIDs);
 
     if (allObjectIDs.length === 0) {
         console.error("No se encontraron IDs de objetos.");
@@ -105,24 +105,27 @@ const initPagination = async () => {
     }
 
     loadPage(currentPage); // Cargar la primera página
-};  
+    };  
 
-// Manejar clics en los botones de paginación  
-nextPageButton.addEventListener('click', () => {  
-    if (currentPage < totalPages) {  
-        currentPage++;  
-        loadPage(currentPage);  
-    }  
-});  
-prevPageButton.addEventListener('click', () => {  
-    if (currentPage > 1) {  
-        currentPage--;  
-        loadPage(currentPage);  
-    }  
-});  
+    // Manejar clics en los botones de paginación 
 
-// Cargar la página inicial  
-initPagination();
+    nextPageButton.addEventListener('click', () => {  
+        if (currentPage < totalPages) {  
+            currentPage++;
+            console.log("Avanza", currentPage);  
+            loadPage(currentPage);  
+        }  
+    });  
+    prevPageButton.addEventListener('click', () => {  
+        if (currentPage > 1) {  
+            currentPage--;
+            console.log("Atras", currentPage);  
+            loadPage(currentPage);  
+        }  
+    });  
+
+    // Cargar la página inicial  
+    initPagination();
 
     // Función para abrir el modal y mostrar las imágenes adicionales
     document.querySelectorAll('.ver-mas').forEach(button => {
