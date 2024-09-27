@@ -5,7 +5,9 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     link(rel="stylesheet", href="styles.css")  
     title Resultados del Museo  
-  body  
+  body
+    h2.text-center.galeria-header GALERIA DEL MUSEO METROPOLITANO DE NEW YORK
+  
     .grid
       each object in objects
         .card
@@ -33,5 +35,6 @@ html(lang="en")
         button.btn#next-page(type="button", 
         onclick=`window.location.href='/search?page=${currentPage + 1}
         &departmentId=${departmentId}&keyword=${keyword}&location=${location}'`) Siguiente
+    
 
     script(src='funciones.js')

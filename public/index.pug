@@ -8,8 +8,9 @@ head
 body  
     .background-images  
         img#backgroundImage(src='pictures/imagen1.jpg', alt='Fondo')  
-    h1.text-center Museo Metropolitano de Arte Nueva York  
-   
+    h2.text-center.galeria-header GALERIA DEL MUSEO METROPOLITANO DE NEW YORK
+
+    
         form(action="/search" method="get")  
             label(for="departmentId") Departamento:  
             select(name="departmentId" id="departmentId")  
@@ -23,8 +24,16 @@ body
             label(for="location", class="me-1") Localización:  
             input(type="text" name='location' id="geoLocation" placeholder="Ej. France")  
             
-            button.btn.btn-primary(type="submit") Buscar  
+            button.btn.btn-primary(type="submit") Buscar
             
+footer.footer-style  
+    p  
+        | Museo de Arte Bienvenidos  
+        | &nbsp; 
+        | PAGINA OFICIAL  
+        | &nbsp; 
+        a(href="https://www.metmuseum.org/es", target="_blank") THE MET
+
     script(src="funciones.js")
     script.  
             let currentImageIndex = 1;  
